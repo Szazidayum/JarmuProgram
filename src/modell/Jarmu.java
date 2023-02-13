@@ -4,20 +4,14 @@ public abstract class Jarmu {
 
     private boolean beinditva, uzemanyag, megerkezett;
 
-    public Jarmu(boolean beinditva, boolean uzemanyag, boolean megerkezett) {
+    public Jarmu() {
         this.beinditva = false;
         this.uzemanyag = true;
         this.megerkezett = false;
     }
     
     public void beindit(){
-        if(uzemanyag == false){
-            leallit();
-        }else{
            beinditva = true;
-           halad();
-           uzemanyag = false;
-        }
     }
     
     public void leallit(){
@@ -25,19 +19,18 @@ public abstract class Jarmu {
     }
     
     public boolean tankol(){
-        if(beinditva==false){
-           uzemanyag=true;
-        }
-        return uzemanyag;
+        boolean tankolva = false;
+        return tankolva;
     }
     
     public boolean halad(){
-        if(uzemanyag==false){
-            megerkezett=true;
-        }else{
-            megerkezett=false;
-        }
-        return megerkezett;
+        boolean haladE = false;
+        return haladE;
     }
+
+    public boolean isBeinditva() {
+        return beinditva;
+    }
+    
     
 }
